@@ -251,6 +251,126 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://iblacksun.github.io/beauty-of-mathematics_three/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="享耳先森">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/712004?v=3&s=460">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="享耳先森">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/beauty-of-mathematics_three/" itemprop="url">数学之美（三）统计语言模型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-06T15:25:45+08:00">
+                2017-09-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>前面一直强调，自然语言从产生开始，逐渐演变成一种上下文相关的信息表达和传递的方式，因此要让计算机处理自然语言，一个基本的问题就是为自然语言这种上下文相关的特性建立数学模型。这个模型就是在自然语言处理中常说的「统计语言模型」(Statistical Language Model)，它是今天所有自然语言处理的基础，广泛应用于机器翻译、语音识别、印刷体或手写体识别、拼写纠错、汉字输入和文献查询。</p>
+<h2 id="统计语言模型"><a href="#统计语言模型" class="headerlink" title="统计语言模型"></a>统计语言模型</h2><h3 id="用数学的方法描述语言规律"><a href="#用数学的方法描述语言规律" class="headerlink" title="用数学的方法描述语言规律"></a>用数学的方法描述语言规律</h3><p>「统计语言模型」由贾里尼克及其同事提出，初衷是为了解决语音识别的问题。在语音识别中，计算机需要知道一个文字序列是否能构成一个大家理解并有意义的句子，然后显示或打印给使用者。例如：<br><code>美联储主席本・伯南克昨天告诉媒体 7000 亿美元的救助资金将借给上百家银行、保险公司和汽车公司。</code><br>这句话很通顺，意思也很明白。如果改变一些词的顺序或替换掉一些词，变成:<br><code>本・伯南克美联储主席昨天 7000 亿美元的救助资金告诉媒体将借给银行、保险公司和汽车公司百家。</code><br>虽然多少能猜到一点，但意思就含混了，但如果再换成：<br><code>联主美储席本・伯诉体南将借天的救告媒昨助资金 70 元亿 00 美给上百百百家银保行、汽车险公司公司和。</code><br>基本上读者就不知所云了。</p>
+<p>如果问一个没学过自然语言处理的人为什么会这样？他可能会说，第一个句子合乎语法、词义清晰；第二个句子虽然不合乎语法但词义还算清晰；而第三个句子则连词义都不清晰了。70 年代以前，科学家也是这样想的，他们试图判断这个文字序列是否合乎文法、含义是否准确等，但这条路走不通。</p>
+<p>贾里尼克用一个简单的统计模型漂亮的搞定了这个问题，他的出发点很简单：一个句子是否合理，就看它的可能性大小如何。可能性则用概率来衡量，如第一个句子的概率大约是 10⁻²⁰，第二个句子出现的概率是10⁻²⁵，第三个句子出现的概率是 10⁻⁷⁰。因此，第一个句子出现的概率最大。这种方法更普遍而严格的描述是：<br>假定 S 表示一个有意义的句子，由一串特定顺序排列的词 <code>w₁,w₂,…,w𝑛</code> 组成，n 代表句子的长度(词的个数)。</p>
+<p>现在想知道 S 的概率 P(S)，那么 <code>P(S) = P(w₁,w₂,…,wn)</code>，利用条件概率的公式， S 这个序列出现的概率等于每一个词出现的条件概率相乘，于是可继续展开为：<code>P(w₁,w₂,…,w𝑛) = P(w₁)·P(w₂|w₁)·P(w₃|w₂,w₁)·…·P(w𝑛|w₁,w₂,...,w𝑛₋₁)</code>。 其中<code>P(w₁)</code>表示第一个词出现的概率；<code>P(w₂|w₁)</code>则是已知第一个词的前提下，第二个词出现的概率，依此类推。不难看出，词<code>w𝑛</code>出现的概率取决于它前面的所有词。</p>
+<p>从计算上来说<code>P(w₁)</code>很容易算，<code>P(w₂|w₁)</code>也不太麻烦，但<code>P(w𝑛|w₁,w₂,...w𝑛₋₁)</code>可能性太大，无法估算，怎么办呢？数学上有种偷懒但颇为有效的方法叫「马可夫假设」：假设任意一个词<code>w𝑛</code>出现的概率只同她前面的词<code>w𝑛₋₁</code>有关，于是问题变得很简单，S 出现的概率就简单多了：<code>P(S) = P(w₁)·P(w₂|w₁)·P(w₃|w₂)·…·P(w𝑛|w𝑛₋₁)</code></p>
+<p>上面公式对应的统计语言模型是<code>二元模型（Bigram Model)</code>，当然，也可以假设一个词由前面 N-1 个词决定，对应的模型稍微复杂些，被称为「N 元模型」。接下来的问题是如何估算<code>P(w𝑛|w𝑛₋₁)</code>，根据它的定义：<code>P(w𝑛|w𝑛₋₁) = P(w𝑛₋₁,w𝑛) ∕ P(w𝑛₋₁)</code>，从而估计联合概率 <code>P(w𝑛₋₁,w𝑛)</code> 和边缘概率 <code>P(w𝑛₋₁)</code>。</p>
+<p>因为有了大量的语料库，只要数一数 <code>w𝑛₋₁,w𝑛</code> 这对词在统计的文本中前后相邻出现了多少次 <code>#(w𝑛₋₁,w𝑛)</code>，以及 <code>w𝑛₋₁</code> 在同样的文本中出现了多少次 <code>#(w𝑛₋₁)</code>，然后再用两个数分别除以语料库的大小 <code>#</code>，即可得到这些词或者二元组的相对频度：<br><code>𝒇(w𝑛₋₁,w𝑛) = #(w𝑛₋₁,w𝑛) ∕ #</code><br><code>𝒇(w𝑛₋₁) = #(w𝑛₋₁) ∕ #</code><br>根据大数定理，只要统计量足够，相对频度就等于概率，即:<br><code>P(w𝑛₋₁,w𝑛) ≈ #(w𝑛₋₁,w𝑛) ∕ #</code><br><code>P(w𝑛₋₁) ≈ #(w𝑛₋₁) ∕ #</code><br>而 <code>P(w𝑛|w𝑛₋₁)</code> 就是两个数的比值，再考虑到上面的两个概率有相同的分母，可以约掉，因此：<code>P(w𝑛|w𝑛₋₁) ≈ #(w𝑛₋₁,w𝑛) ∕ #(w𝑛₋₁)</code>.</p>
+<p>现在，你已开始感受数学的美妙了，它把一些复杂问题变得如此简单，用这么简单的数学模型解决复杂的语音识别、机器翻译等问题。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://iblacksun.github.io/beauty-of-mathematics_two/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -912,7 +1032,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
