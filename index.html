@@ -251,6 +251,243 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://iblacksun.github.io/beauty-of-mathematics_two/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="享耳先森">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/712004?v=3&s=460">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="享耳先森">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/beauty-of-mathematics_two/" itemprop="url">数学之美（二）自然语言处理(NLP)历史 —— 从规则到统计</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-06T15:13:45+08:00">
+                2017-09-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>语言的出现是为了在人类之间通信。字母、文字和数字实际是信息编码的不同单位。任何一种语言都是一种编码方式，而语言的语法规则则是编码和解码算法。人类将头脑中的信息通过一句话表达出来，则是对信息进行编码，编码的结果则是一串文字。</p>
+<p>从 1946 年现代电子计算机出现后，计算机在很多事情上都做的比人还好。那么，机器能不能懂的自然语言呢？这要从「图灵测试」开始。</p>
+<h2 id="图灵测试"><a href="#图灵测试" class="headerlink" title="图灵测试"></a>图灵测试</h2><p>最早提出机器智能的是计算机科学之父「阿兰・图灵」，他在「计算的机器和智能」这篇论文中提出了一种验证机器是否有智能的方法：让人和机器进行交流，如果人无法判断出自己交流的对象是人还是机器，就说明这个机器有智能了。这种方法被后人称为「图灵测试」。</p>
+<h2 id="自然语言处理"><a href="#自然语言处理" class="headerlink" title="自然语言处理"></a>自然语言处理</h2><p>图灵其实是留下了一个问题，而非答案，但是一般认为自然语言机器处理的历史可以追溯到那个时候，至今已 60 多年了。这 60 多年的发展过程，可以分成两个阶段：从 20 世纪 50 年代到 70 年代，是走弯路的阶段；70 年代开始，一些自然语言处理的先驱重新认识这个问题，找到了基于数学模型和统计的方法，自然语言处理进入第二个阶段。</p>
+<h3 id="基于语法规则"><a href="#基于语法规则" class="headerlink" title="基于语法规则"></a>基于语法规则</h3><p>20 世纪 60 年代，对于怎样理解自然语言，科学家的普遍认识是先要做好两件事：分析语句和获取语义。这种惯性思维受到传统语言学研究的影响：中世纪以来，语法一直是大学教授的主要课程之一，西方的语言学家们已经对各种自然语言进行看非常形式化的总结，形成了十分完备的体系。而这些语法规则又很容易用计算机算法描述，这就更加坚定了大家对基于规则的自然语言处理的信心。</p>
+<p>20 世纪 80 年代以前，自然语言处理工作中的文法规则都是人工写的。科学家们原本以为随着对自然语言语法概括的越来越全面，同时计算机计算能力的提高，这种方法可以逐步解决自然语言理解的问题。这里面有两个越不过去的坎：首先，通过文法规则覆盖哪怕 20% 的真实语句，规则的数量也至少是几万条，而且，这些规则甚至会出现矛盾，为了解决矛盾，还要说明规则的特地使用环境。其次，即使能能列出所有规则，也很难用计算机来解析。在自然语言的演变过程中，产生了词义与上下文相关的特性，因此，它的文法是比较复杂的上下文有关文法。</p>
+<h3 id="从规则到统计"><a href="#从规则到统计" class="headerlink" title="从规则到统计"></a>从规则到统计</h3><p>70 年代，基于规则的语法分析很快走到了尽头，而对于语义的处理则遇到了更大的麻烦，计算机无法处理自然语言中词语的多义性(The box is in the pen)。可以说，利用计算机处理自然语言的努力直到 20 世纪 70 年代初是相当失败的。</p>
+<p>1970 年以后统计语言学的出现使得自然语言处理重获新生并取得今天的非凡成就。推动这个技术路线转变的关键人物是弗里德里克・贾里尼克(Frederick Jelinek)和他领导的 IBM 华生实验室。基于规则的自然语言处理和基于统计的自然语言处理的争执后来还持续了 15 年左右，直到 90 年代初期。这期间，两路人马各自组织和召开自己的会议，如果在共同的会议上，则在各自的分会场开小会。到 90 年代以后，坚持前一种的研究人员越来越少，后者参会人数则越来越多，这样，自然语言处理从规则到统计的过渡就完成了。</p>
+<p>这场争议为什么持续了 15 年呢？其一，一种新的研究方法的成熟需要很多年，当时，基于统计的自然语言处理还有很多问题，在从 80 年代末至今的 25 年里，随着计算机能力的提高和数据量的不断增加，过去看似不可能通过统计模型完成的任务，渐渐都变得可能了。2005 年以后，随着 Google 基于统计方法的翻译系统全面超越基于规则的 SysTran 翻译系统，基于规则方法学派固守的最后一个堡垒被拔掉了。第二点就很有意思了，用基于统计的方法代替传统方法，需要等第一批语言学家退休。毕竟，不是所有人都乐意改变自己的观点。当然，等这批人退休之后，科学就会以更快的速度发展。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://iblacksun.github.io/beauty-of-mathematics_one/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="享耳先森">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/712004?v=3&s=460">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="享耳先森">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/beauty-of-mathematics_one/" itemprop="url">数学之美（一）语言与文字起源</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-01T17:13:18+08:00">
+                2017-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这系列文章是我在看《数学之美》这本书时的一些笔记，全部摘抄自书中对应章节。</p>
+<p>我是个阅读能力很差的人，基本是过目就忘。为了更好的理解书中知识，决定做些记录，也便于以后回顾。</p>
+<h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>早期智人并没有语言，他们通过声音来传递信息，但随着人类的进步和文明的进化，需要表达的信息越来越多，简单的几个声音已不能覆盖要传递的信息，语言就此产生。</p>
+<p>随着语言要描述的要素越来越多，大脑已经记不住所有词汇了。于是，高效记录信息的需求就产生了，这便是文字的起源。目前可考显示：在尼罗河流域出现的象形文字(用图形表示事物)是最早的文字。</p>
+<p>当人类第二个文明中心在两河流域的美索不达米亚建立的时候，楔形文字诞生了。腓尼基人不愿花大量时间雕刻这些楔形字母，而将他们简化成 22 个字母并在商业活动中传播给希腊人的祖先。这些拼音文字在古希腊得到充分发展，字母的拼写和读音紧密的结合起来，相对容易学习。在随后的几个世纪传遍欧亚非大陆及「罗马式语言」。</p>
+<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>从象形文字到拼音文字是一个飞跃，从物体的外表进化到了抽象的概念，同时不自觉的对信息进行编码。<br>语言从古语发展到现代语言，表意比以前更准确、丰富，这里没语法起了很大的作用。如果说从字母到词的「构词法」是词的编码规则，那么语法则可以认为是语言的编码与解码规则。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://iblacksun.github.io/spritekit/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -365,6 +602,124 @@
 <li><a href="https://developer.apple.com/spritekit/" target="_blank" rel="external">https://developer.apple.com/spritekit/</a></li>
 <li><a href="https://www.raywenderlich.com/148670/spritekit-tutorial-create-interactive-childrens-book-sprite-kit-swift-3" target="_blank" rel="external">SpriteKit Tutorial: Create an Interactive Children’s Book with SpriteKit and Swift 3</a></li>
 <li><a href="https://store.raywenderlich.com/products/2d-apple-games-by-tutorials" target="_blank" rel="external">2D Apple Games by Tutorials</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://iblacksun.github.io/dyldcrash/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="享耳先森">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/712004?v=3&s=460">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="享耳先森">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/dyldcrash/" itemprop="url">Dyld Message：Library not loaded</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-18T09:22:36+08:00">
+                2016-04-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>丁香园早在 2015 年就全面转向 Swift 了。虽然 Xcode 在写 Swift 时候各种崩溃，但相比 OC，写出来的代码更加简洁。<br>直到最近，我们发布的 app 经常收到用户的反馈：「打开 app 时经常闪退。」在后台查看收集的闪退日志并无异常，从 iTunes Connect 的「App 分析」查看确实闪退率飙升。</p>
+<h2 id="Crash-Log"><a href="#Crash-Log" class="headerlink" title="Crash Log"></a>Crash Log</h2><p>继续此话题前，最好需要对 Crash log 的收集机制有些了解，推荐 <a href="https://nianxi.net/ios/ios-crash-reporter.html" target="_blank" rel="external">《漫谈 iOS Crash 收集框架》 —— 念茜</a>。</p>
+<h2 id="dyld"><a href="#dyld" class="headerlink" title="dyld"></a>dyld</h2><h2 id="如何解决"><a href="#如何解决" class="headerlink" title="如何解决"></a>如何解决</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://www.mikeash.com/pyblog/friday-qa-2013-01-11-mach-exception-handlers.html" target="_blank" rel="external">Mach Exception Handlers</a></li>
+<li><a href="https://nianxi.net/ios/ios-crash-reporter.html" target="_blank" rel="external">漫谈 iOS Crash 收集框架 —— 念茜</a></li>
+<li><a href="https://github.com/artsy/eigen/issues/1246" target="_blank" rel="external">https://github.com/artsy/eigen/issues/1246</a></li>
 </ul>
 
           
@@ -557,7 +912,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -570,7 +925,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
