@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="前面一直强调，自然语言从产生开始，逐渐演变成一种上下文相关的信息表达和传递的方式，因此要让计算机处理自然语言，一个基本的问题就是为自然语言这种上下文相关的特性建立数学模型。这个模型就是在自然语言处理中常说的「统计语言模型」(Statistical Language Model)，它是今天所有自然语言处理的基础，广泛应用于机器翻译、语音识别、印刷体或手写体识别、拼写纠错、汉字输入和文献查询。 统计语">
+<meta name="description" content="「统计语言模型」是建立在词的基础上，因为词是表达语义的最小单位。对于西方语言来讲，词之间有明确的分隔符(识别手写体时分隔符不明显，也需要进行分词)，而对于一些亚洲语言，词之间没有明确分隔符。因此，要做自然语言处理，需要先对句子进行分词。 中文分词历史最容易想到的分词方法，也是最简单的分词方法，就是查字典。这种方法最早由北京航天航空大学的梁南元教授提出。「查字典」方法其实就是把句子从左向右扫码一遍，">
 <meta name="keywords" content="数学之美,数学">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数学之美（三）统计语言模型">
-<meta property="og:url" content="https://iblacksun.github.io/beauty-of-mathematics_three/index.html">
+<meta property="og:title" content="数学之美（四）谈谈分词">
+<meta property="og:url" content="https://iblacksun.github.io/beauty-of-mathematics_four/index.html">
 <meta property="og:site_name" content="享耳先森">
-<meta property="og:description" content="前面一直强调，自然语言从产生开始，逐渐演变成一种上下文相关的信息表达和传递的方式，因此要让计算机处理自然语言，一个基本的问题就是为自然语言这种上下文相关的特性建立数学模型。这个模型就是在自然语言处理中常说的「统计语言模型」(Statistical Language Model)，它是今天所有自然语言处理的基础，广泛应用于机器翻译、语音识别、印刷体或手写体识别、拼写纠错、汉字输入和文献查询。 统计语">
-<meta property="og:updated_time" content="2017-09-07T09:46:26.005Z">
+<meta property="og:description" content="「统计语言模型」是建立在词的基础上，因为词是表达语义的最小单位。对于西方语言来讲，词之间有明确的分隔符(识别手写体时分隔符不明显，也需要进行分词)，而对于一些亚洲语言，词之间没有明确分隔符。因此，要做自然语言处理，需要先对句子进行分词。 中文分词历史最容易想到的分词方法，也是最简单的分词方法，就是查字典。这种方法最早由北京航天航空大学的梁南元教授提出。「查字典」方法其实就是把句子从左向右扫码一遍，">
+<meta property="og:updated_time" content="2017-09-19T02:44:02.635Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数学之美（三）统计语言模型">
-<meta name="twitter:description" content="前面一直强调，自然语言从产生开始，逐渐演变成一种上下文相关的信息表达和传递的方式，因此要让计算机处理自然语言，一个基本的问题就是为自然语言这种上下文相关的特性建立数学模型。这个模型就是在自然语言处理中常说的「统计语言模型」(Statistical Language Model)，它是今天所有自然语言处理的基础，广泛应用于机器翻译、语音识别、印刷体或手写体识别、拼写纠错、汉字输入和文献查询。 统计语">
+<meta name="twitter:title" content="数学之美（四）谈谈分词">
+<meta name="twitter:description" content="「统计语言模型」是建立在词的基础上，因为词是表达语义的最小单位。对于西方语言来讲，词之间有明确的分隔符(识别手写体时分隔符不明显，也需要进行分词)，而对于一些亚洲语言，词之间没有明确分隔符。因此，要做自然语言处理，需要先对句子进行分词。 中文分词历史最容易想到的分词方法，也是最简单的分词方法，就是查字典。这种方法最早由北京航天航空大学的梁南元教授提出。「查字典」方法其实就是把句子从左向右扫码一遍，">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://iblacksun.github.io/beauty-of-mathematics_three/"/>
+  <link rel="canonical" href="https://iblacksun.github.io/beauty-of-mathematics_four/"/>
 
 
 
 
 
-  <title>数学之美（三）统计语言模型 | 享耳先森</title>
+  <title>数学之美（四）谈谈分词 | 享耳先森</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -254,7 +254,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://iblacksun.github.io/beauty-of-mathematics_three/">
+    <link itemprop="mainEntityOfPage" href="https://iblacksun.github.io/beauty-of-mathematics_four/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="享耳先森">
@@ -271,7 +271,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数学之美（三）统计语言模型</h1>
+          <h1 class="post-title" itemprop="name headline">数学之美（四）谈谈分词</h1>
         
 
         <div class="post-meta">
@@ -283,8 +283,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-06T15:25:45+08:00">
-                2017-09-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-18T18:01:22+08:00">
+                2017-09-18
               </time>
             
 
@@ -318,15 +318,16 @@
       
 
       
-        <p>前面一直强调，自然语言从产生开始，逐渐演变成一种上下文相关的信息表达和传递的方式，因此要让计算机处理自然语言，一个基本的问题就是为自然语言这种上下文相关的特性建立数学模型。这个模型就是在自然语言处理中常说的「统计语言模型」(Statistical Language Model)，它是今天所有自然语言处理的基础，广泛应用于机器翻译、语音识别、印刷体或手写体识别、拼写纠错、汉字输入和文献查询。</p>
-<h2 id="统计语言模型"><a href="#统计语言模型" class="headerlink" title="统计语言模型"></a>统计语言模型</h2><h3 id="用数学的方法描述语言规律"><a href="#用数学的方法描述语言规律" class="headerlink" title="用数学的方法描述语言规律"></a>用数学的方法描述语言规律</h3><p>「统计语言模型」由贾里尼克及其同事提出，初衷是为了解决语音识别的问题。在语音识别中，计算机需要知道一个文字序列是否能构成一个大家理解并有意义的句子，然后显示或打印给使用者。例如：<br><code>美联储主席本・伯南克昨天告诉媒体 7000 亿美元的救助资金将借给上百家银行、保险公司和汽车公司。</code><br>这句话很通顺，意思也很明白。如果改变一些词的顺序或替换掉一些词，变成:<br><code>本・伯南克美联储主席昨天 7000 亿美元的救助资金告诉媒体将借给银行、保险公司和汽车公司百家。</code><br>虽然多少能猜到一点，但意思就含混了，但如果再换成：<br><code>联主美储席本・伯诉体南将借天的救告媒昨助资金 70 元亿 00 美给上百百百家银保行、汽车险公司公司和。</code><br>基本上读者就不知所云了。</p>
-<p>如果问一个没学过自然语言处理的人为什么会这样？他可能会说，第一个句子合乎语法、词义清晰；第二个句子虽然不合乎语法但词义还算清晰；而第三个句子则连词义都不清晰了。70 年代以前，科学家也是这样想的，他们试图判断这个文字序列是否合乎文法、含义是否准确等，但这条路走不通。</p>
-<p>贾里尼克用一个简单的统计模型漂亮的搞定了这个问题，他的出发点很简单：一个句子是否合理，就看它的可能性大小如何。可能性则用概率来衡量，如第一个句子的概率大约是 10⁻²⁰，第二个句子出现的概率是10⁻²⁵，第三个句子出现的概率是 10⁻⁷⁰。因此，第一个句子出现的概率最大。这种方法更普遍而严格的描述是：<br>假定 S 表示一个有意义的句子，由一串特定顺序排列的词 <code>w₁,w₂,…,w𝑛</code> 组成，n 代表句子的长度(词的个数)。</p>
-<p>现在想知道 S 的概率 P(S)，那么 <code>P(S) = P(w₁,w₂,…,wn)</code>，利用条件概率的公式， S 这个序列出现的概率等于每一个词出现的条件概率相乘，于是可继续展开为：<code>P(w₁,w₂,…,w𝑛) = P(w₁)·P(w₂|w₁)·P(w₃|w₂,w₁)·…·P(w𝑛|w₁,w₂,...,w𝑛₋₁)</code>。 其中<code>P(w₁)</code>表示第一个词出现的概率；<code>P(w₂|w₁)</code>则是已知第一个词的前提下，第二个词出现的概率，依此类推。不难看出，词<code>w𝑛</code>出现的概率取决于它前面的所有词。</p>
-<p>从计算上来说<code>P(w₁)</code>很容易算，<code>P(w₂|w₁)</code>也不太麻烦，但<code>P(w𝑛|w₁,w₂,...w𝑛₋₁)</code>可能性太大，无法估算，怎么办呢？数学上有种偷懒但颇为有效的方法叫「马可夫假设」：假设任意一个词<code>w𝑛</code>出现的概率只同她前面的词<code>w𝑛₋₁</code>有关，于是问题变得很简单，S 出现的概率就简单多了：<code>P(S) = P(w₁)·P(w₂|w₁)·P(w₃|w₂)·…·P(w𝑛|w𝑛₋₁)</code></p>
-<p>上面公式对应的统计语言模型是<code>二元模型（Bigram Model)</code>，当然，也可以假设一个词由前面 N-1 个词决定，对应的模型稍微复杂些，被称为「N 元模型」。接下来的问题是如何估算<code>P(w𝑛|w𝑛₋₁)</code>，根据它的定义：<code>P(w𝑛|w𝑛₋₁) = P(w𝑛₋₁,w𝑛) ∕ P(w𝑛₋₁)</code>，从而估计联合概率 <code>P(w𝑛₋₁,w𝑛)</code> 和边缘概率 <code>P(w𝑛₋₁)</code>。</p>
-<p>因为有了大量的语料库，只要数一数 <code>w𝑛₋₁,w𝑛</code> 这对词在统计的文本中前后相邻出现了多少次 <code>#(w𝑛₋₁,w𝑛)</code>，以及 <code>w𝑛₋₁</code> 在同样的文本中出现了多少次 <code>#(w𝑛₋₁)</code>，然后再用两个数分别除以语料库的大小 <code>#</code>，即可得到这些词或者二元组的相对频度：<br><code>𝒇(w𝑛₋₁,w𝑛) = #(w𝑛₋₁,w𝑛) ∕ #</code><br><code>𝒇(w𝑛₋₁) = #(w𝑛₋₁) ∕ #</code><br>根据大数定理，只要统计量足够，相对频度就等于概率，即:<br><code>P(w𝑛₋₁,w𝑛) ≈ #(w𝑛₋₁,w𝑛) ∕ #</code><br><code>P(w𝑛₋₁) ≈ #(w𝑛₋₁) ∕ #</code><br>而 <code>P(w𝑛|w𝑛₋₁)</code> 就是两个数的比值，再考虑到上面的两个概率有相同的分母，可以约掉，因此：<code>P(w𝑛|w𝑛₋₁) ≈ #(w𝑛₋₁,w𝑛) ∕ #(w𝑛₋₁)</code>.</p>
-<p>现在，你已开始感受数学的美妙了，它把一些复杂问题变得如此简单，用这么简单的数学模型解决复杂的语音识别、机器翻译等问题。</p>
+        <p>「统计语言模型」是建立在词的基础上，因为词是表达语义的最小单位。对于西方语言来讲，词之间有明确的分隔符(识别手写体时分隔符不明显，也需要进行分词)，而对于一些亚洲语言，词之间没有明确分隔符。因此，要做自然语言处理，需要先对句子进行分词。</p>
+<h2 id="中文分词历史"><a href="#中文分词历史" class="headerlink" title="中文分词历史"></a>中文分词历史</h2><p>最容易想到的分词方法，也是最简单的分词方法，就是查字典。这种方法最早由北京航天航空大学的梁南元教授提出。「查字典」方法其实就是把句子从左向右扫码一遍，遇到字典里有的词就标识出来；遇到复合词(如 “上海大学”)就找最长的词匹配；遇到不认识的字串就分割成单字词。</p>
+<p>这种最简单的方法可以解决七八成以上的分词问题。但是，它毕竟太简单，遇到复杂一点的问题就无能为力了。20 世纪 80 年代，哈尔滨工业大学的王晓龙博士将查字典的方法理论化，发展成最少词数的分词理论，即一句话应该分成数量最少的词串。这种方法明显的不足是遇到有二义性的分割时就无能为力了。比如 “上海大学城书店” 的正确分词应该是 “上海 - 大学城 - 书店”，而不是 “上海大学 - 城 - 书店”。</p>
+<h2 id="基于语言统计模型分词"><a href="#基于语言统计模型分词" class="headerlink" title="基于语言统计模型分词"></a>基于语言统计模型分词</h2><p>1990 年前后，清华大学郭进博士用统计语言模型成功解决了分词二义性的问题，将汉语分词的错误率降低一个数量级，上面举的二义性例子用统计语言模型都可以解决。</p>
+<p>利用统计语言模型分词的方法，可以用数学公式进行概括。假定一个句子 S 有几种分词方法，为了简单起见，假定有一下三种： <code>A1, A2,A3,...,Ak</code> <code>B1,B2,B3,...,Bm</code> <code>C1,C2,C3,...,Cn</code>。其中，<code>A1,A2,B1,B2,C1,C2</code> 等都是汉语的词，上述各种分词结果可能产生不同数量的词串，所以用 k,m,n 三个下标表示分词结果词的数目。那么最好的一种分词方法应该保证分词后这个句子出现的概率最大。也就是说，如果 <code>A1, A2,A3,...,Ak</code> 是最好的分词方法，那么其概率满足：</p>
+<p><code>P(A1, A2,A3,...,Ak) &gt; P(B1,B2,B3,...,Bm)</code></p>
+<p>并且</p>
+<p><code>P(A1, A2,A3,...,Ak) &gt; P(C1,C2,C3,...,Cn)</code></p>
+<p>因此，只要利用上一章提到的统计语言模型计算出每种分词句子出现的概率，并找出其中最大的，就能找到最好的分词方法。</p>
+<p>中文分词以统计语言模型为基础，经过几十年的发展和完善，今天基本上可以看做是一个已解决的问题。当然不同的人做的分词器有好有坏，这里的差别主要在于数据的使用和工程实现的精度。</p>
 
       
     </div>
@@ -371,8 +372,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/beauty-of-mathematics_two/" rel="next" title="数学之美（二）自然语言处理(NLP)历史 —— 从规则到统计">
-                <i class="fa fa-chevron-left"></i> 数学之美（二）自然语言处理(NLP)历史 —— 从规则到统计
+              <a href="/beauty-of-mathematics_three/" rel="next" title="数学之美（三）统计语言模型">
+                <i class="fa fa-chevron-left"></i> 数学之美（三）统计语言模型
               </a>
             
           </div>
@@ -380,10 +381,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/beauty-of-mathematics_four/" rel="prev" title="数学之美（四）谈谈分词">
-                数学之美（四）谈谈分词 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -532,7 +529,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#统计语言模型"><span class="nav-number">1.</span> <span class="nav-text">统计语言模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用数学的方法描述语言规律"><span class="nav-number">1.1.</span> <span class="nav-text">用数学的方法描述语言规律</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#中文分词历史"><span class="nav-number">1.</span> <span class="nav-text">中文分词历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于语言统计模型分词"><span class="nav-number">2.</span> <span class="nav-text">基于语言统计模型分词</span></a></li></ol></div>
             
 
           </div>
