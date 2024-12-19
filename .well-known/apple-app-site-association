@@ -14,25 +14,25 @@
             {
                 "appID":"Q598V4E57R.com.iblacksun.apps",
                 "paths":[
-                    "/gallery/oauth/callback/*"
+                    "/gallery/oauth/*"
                 ]
             },
             {
                 "appID":"NHLB9423RZ.com.qmmate.gallery360",
                 "paths":[
-                    "/gallery/oauth/callback/*"
+                    "/gallery/oauth/*"
                 ]
             },
             {
                 "appID":"Q598V4E57R.com.iblacksun.appinsight",
                 "paths":[
-                    "/joyway/oauth/callback/*"
+                    "/joyway/oauth/*"
                 ]
             },
             {
-                "appID":"NHLB9423RZ.com.com.qmmate.joyway",
+                "appID":"NHLB9423RZ.com.qmmate.joyway",
                 "paths":[
-                    "/joyway/oauth/callback/*"
+                    "/joyway/oauth/*"
                 ]
             }
         ]
